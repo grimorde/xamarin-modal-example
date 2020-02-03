@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="XamarinModalExample.Controls.Modal"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="ModalControl">
+
+    <ContentView.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout
+                BackgroundColor="#4f000000"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill">
+                <Frame
+                    Margin="15,25"
+                    Padding="5"
+                    Style="{StaticResource ModalStyle}"
+                    VerticalOptions="Center">
+                    <StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="8*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                x:Name="ModalHeaderLabel"
+                                Grid.ColumnSpan="2"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Style="{StaticResource HeaderLabel}"
+                                Text="{Binding Source={x:Reference ModalControl}, Path=ModalHeader}"
+                                VerticalOptions="Start" />
+                            <Button
+                                x:Name="CloseModalBtn"
+                                Grid.Column="1"
+                                Clicked="CloseModalBtn_OnClicked"
+                                HorizontalOptions="End"
+                                Text="X" />
+                        </Grid>
+                        <ContentPresenter />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ControlTemplate>
+    </ContentView.ControlTemplate>
+
+</ContentView>

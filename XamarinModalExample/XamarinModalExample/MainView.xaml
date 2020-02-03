@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamarinModalExample.MainView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:XamarinModalExample.Controls;assembly=XamarinModalExample">
+
+    <Grid>
+        <ScrollView Grid.Row="0">
+            <StackLayout>
+                <StackLayout Margin="10" Orientation="Horizontal">
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource HeaderLabel}"
+                        Text="Show help" />
+                    <Button
+                        x:Name="ShowModalBtn"
+                        Command="{Binding ShowHelp}"
+                        HorizontalOptions="End"
+                        Text="??" />
+                </StackLayout>
+
+                <StackLayout Margin="10" Orientation="Vertical">
+                    <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque aliquam vestibulum morbi blandit cursus. Tellus id interdum velit laoreet id donec. Vehicula ipsum a arcu cursus. Quam quisque id diam vel. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Accumsan sit amet nulla facilisi morbi. Et malesuada fames ac turpis. Nunc scelerisque viverra mauris in aliquam. Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc." />
+                    <Image
+                        Aspect="AspectFit"
+                        HeightRequest="400"
+                        Source="dragon.jpg"
+                        WidthRequest="400" />
+                    <Label Text="Nec ultrices dui sapien eget. Aliquet porttitor lacus luctus accumsan tortor posuere. Massa id neque aliquam vestibulum morbi blandit cursus risus at. Lectus urna duis convallis convallis tellus. Ut consequat semper viverra nam libero justo laoreet sit amet. Donec et odio pellentesque diam volutpat. Nunc aliquet bibendum enim facilisis gravida neque." />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+        <controls:Modal
+            Grid.Row="0"
+            ModalHeader="Help Text"
+            ShowModal="{Binding ShowHelpModal}"
+            VerticalOptions="Fill">
+            <StackLayout>
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource SubHeaderLabel}"
+                    Text="This is my example of a modal in Xamarin" />
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource SubHeaderLabel}"
+                    Text="And here's some random text :)" />
+            </StackLayout>
+        </controls:Modal>
+    </Grid>
+
+</ContentPage>

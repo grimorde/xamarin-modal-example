@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="XamarinModalExample.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Application.Resources>
+        <ResourceDictionary />
+
+        <OnPlatform x:Key="MediumFont" x:TypeArguments="x:Double">
+            <On Platform="iOS" Value="14" />
+            <On Platform="Android, UWP, WinRT, WinPhone" Value="16" />
+        </OnPlatform>
+
+        <OnPlatform x:Key="LargeFont" x:TypeArguments="x:Double">
+            <On Platform="iOS" Value="16" />
+            <On Platform="Android, UWP, WinRT, WinPhone" Value="18" />
+        </OnPlatform>
+
+        <!--  labels  -->
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="{StaticResource MediumFont}" />
+        </Style>
+
+        <Style x:Key="HeaderLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="{StaticResource LargeFont}" />
+            <Setter Property="TextColor" Value="RoyalBlue" />
+        </Style>
+
+        <Style x:Key="SubHeaderLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="{StaticResource MediumFont}" />
+            <Setter Property="TextColor" Value="DarkGray" />
+        </Style>
+
+        <Style x:Key="ModalStyle" TargetType="Frame">
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="HasShadow" Value="True" />
+        </Style>
+
+        <ResourceDictionary />
+    </Application.Resources>
+</Application>
